@@ -50,7 +50,6 @@ namespace Practica1POO
             foreach (var j in ListaVehiculos)
             {
                 Console.WriteLine("Ingrese la cantidad de pasajeros del {0} número {1}", j.GetType().Name, j.MostrarPatente());
-                //cuantosSuben = Convert.ToInt32(Console.ReadLine());
                 cuantosSuben = Console.ReadLine();
 
                 while (!validacion(cuantosSuben, j.MostrarCapacidad()))
@@ -62,23 +61,6 @@ namespace Practica1POO
                 int pasajerosValidos = Convert.ToInt32(cuantosSuben);
                 j.AbordarPasajeros(pasajerosValidos);                
             }
-
-
-           /* for (int i = 0; i <= ListaVehiculos.Count(); i++)
-            {
-                Console.WriteLine("Ingrese la cantidad de pasajeros del {0} número {1}", ListaVehiculos[i].GetType().Name, ListaVehiculos[i].MostrarPatente());
-                cuantosSuben = Convert.ToInt32(Console.ReadLine());
-
-                if (!HayCapacidad)
-                {
-
-                }
-                
-
-
-                ListaVehiculos[i].AbordarPasajeros(cuantosSuben);
-
-            }*/
 
             Console.WriteLine("\n");
 

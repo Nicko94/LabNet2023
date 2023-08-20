@@ -10,7 +10,6 @@ namespace Practica1POO
     {
         const int CAPACIDAD_TAXI = 4;
 
-
         // Se construye un taxi con su identificador/capacidad correspondiente y 0 pasajeros
         public Taxi(int idTaxi) : base(idTaxi, 0, CAPACIDAD_TAXI){}
 

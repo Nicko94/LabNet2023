@@ -15,8 +15,6 @@ namespace Practica1POO
         private int capacidad { get; set; }
         private string tipo { get; set; }
 
-
-
         // Constructor
         public TransportePublico(int patente, int pasajeros, int capacidad)
         {
@@ -49,7 +47,6 @@ namespace Practica1POO
         {
             Console.WriteLine("{0} {1}: {2} pasajeros", this.GetType().Name, this.MostrarPatente(), this.MostrarPasajeros());
         }
-        
 
         public int MostrarCapacidad()
         {
