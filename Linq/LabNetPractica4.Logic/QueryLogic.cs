@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LabNetPractica4.Entities;
 using LabNetPractica4.UI;
 //using Sitecore.FakeDb;
 
