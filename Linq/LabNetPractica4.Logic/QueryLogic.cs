@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using LabNetPractica4.UI;
-//using Sitecore.FakeDb;
 
 namespace LabNetPractica4.Logic
 {
@@ -9,7 +8,7 @@ namespace LabNetPractica4.Logic
     {
         private DelayOutput D = new DelayOutput();
 
-        public void ClientObject() // A)
+        public void ClientObject()
         {
             var cliente = context.Customers.Take(1).ToList();
 
@@ -27,7 +26,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void OutOfStockProducts() // B)
+        public void OutOfStockProducts()
         {
             var products = from producto in context.Products where producto.UnitsInStock == 0 select producto;
             D.ListDelay("\nProductos sin stock:\n");
@@ -38,7 +37,7 @@ namespace LabNetPractica4.Logic
             }
         }
         
-        public void OnStockValueOverThree() // C)
+        public void OnStockValueOverThree()
         {
             var products = from producto in context.Products where producto.UnitsInStock != 0 && producto.UnitPrice > 3 select producto;
             D.ListDelay("\nProductos en Stock de valor mayor a 3 (Tres):\n");
@@ -50,7 +49,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void RegionWACustomers() // D)
+        public void RegionWACustomers()
         {
             var customers = from cliente in context.Customers where cliente.Region == "WA" select cliente;
             D.ListDelay("\nClientes de la región \"WA\":\n");
@@ -61,7 +60,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void ProductNumber789() // E)
+        public void ProductNumber789()
         {
             var product = context.Products.Where(p => p.ProductID == 789).FirstOrDefault();
             if (product == null)
@@ -77,7 +76,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void CustomersUpperThenLower() // F)
+        public void CustomersUpperThenLower()
         {
             int i = 0;
             var customers = context.Customers.ToList();
@@ -116,7 +115,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void CustomersJoinOrders() // G)
+        public void CustomersJoinOrders()
         {
             var customersJoinOrders = from customer in context.Customers
                                   join orders in context.Orders
@@ -136,7 +135,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void FirstThreeWA() // H)
+        public void FirstThreeWA()
         {
             var customers = context.Customers.Where(c => c.Region == "WA").Take(3).ToList();
             D.ListDelay("\nPrimeros 3 (Tres) Clientes con región \"WA\"");
@@ -147,7 +146,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void ProductsByName() // I)
+        public void ProductsByName()
         {
             var products = context.Products.OrderBy(p => p.ProductName).ToList();
             D.ListDelay("\n| Nombre Producto |\n");
@@ -157,7 +156,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void ProductsByUnitsInStock() // J)
+        public void ProductsByUnitsInStock()
         {
             var products = context.Products.OrderByDescending(p => p.UnitsInStock).ToList();
             D.ListDelay("\n| Nombre Producto | Unidades en Stock |\n");
@@ -167,7 +166,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void ProductsCategories() // K)
+        public void ProductsCategories()
         {
             var categories = from product in context.Products
                                       join category in context.Categories
@@ -187,7 +186,7 @@ namespace LabNetPractica4.Logic
             }
         }
 
-        public void FirstProduct() // L)
+        public void FirstProduct()
         {
             var product = context.Products.First();
             D.ListDelay("Primer Producto de la lista:\n");
@@ -197,7 +196,7 @@ namespace LabNetPractica4.Logic
         }
 
 
-        public void CustomersOrders() // M)
+        public void CustomersOrders()
         {
             var customersOrders = from orden in context.Orders
                                         join cliente in context.Customers
