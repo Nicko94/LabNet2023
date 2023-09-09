@@ -39,7 +39,7 @@ namespace LabNetPractica4.UI
             delay.ListDelay("D) Clientes de la región WA");
             delay.ListDelay("E) Primer elemento o Nulo del Producto de ID: 789");
             delay.ListDelay("F) Nombres de Clientes en Mayúsculas y Minúsculas");
-            delay.ListDelay("G) JOIN de Clientes de la región WA y Órdenes con fecha mayor a 1/1/1997");
+            delay.ListDelay("G) JOIN de Clientes de la región WA con Órdenes de fecha mayor a 1/1/1997");
             delay.ListDelay("H) Primeros 3 Clientes de la región WA");
             delay.ListDelay("I) Productos por Nombre");
             delay.ListDelay("J) Productos por Unidad en stock de mayor a menor");
