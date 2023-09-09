@@ -11,8 +11,6 @@ namespace LabNetPractica4.Logic
 
         public void ClientObject() // A)
         {
-            // SQL Generado
-            //Db.Database.Log = Console.WriteLine();
             var cliente = context.Customers.Take(1).ToList();
 
             if (cliente.Count() == 0)
@@ -198,11 +196,12 @@ namespace LabNetPractica4.Logic
 
         }
 
+
         public void CustomersOrders() // M)
         {
             var customersOrders = from orden in context.Orders
                                         join cliente in context.Customers
-                                                                    on orden.CustomerID equals cliente.CustomerID
+                                        on orden.CustomerID equals cliente.CustomerID
                                         select new { cliente.CompanyName, orden.CustomerID } into consulta
                                         group consulta by new { consulta.CompanyName } into g
                                         select new
